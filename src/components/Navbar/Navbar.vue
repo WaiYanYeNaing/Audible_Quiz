@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-3">
-    <div>
+    <div class="flex">
       <svg
         class="w-7 h-7 text-white"
         fill="none"

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative flex flex-col items-center px-16 py-12 bg-gradient-to-b from-gray to-darkgray h-screen overflow-hidden"
+    class="relative flex flex-col px-16 py-12 bg-gradient-to-b from-mediumgray to-darkgray h-screen overflow-hidden"
   >
-    <Navbar />
-    <Start />
+    <Navbar class="z-20" />
+    <Start class="z-20" />
     <div class="absolute pulse4" />
     <div class="absolute pulse3" />
     <div class="absolute pulse2" />
@@ -39,13 +39,13 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
   opacity: 0;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   -webkit-animation: pulsejg2 7s linear forwards;
   -moz-animation: pulsejg2 7s linear forwards;
-  animation: pulsejg2 7s linear forwards;
+  animation: pulsejg2 17s linear forwards;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   border-radius: 999px;
@@ -66,9 +66,9 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
   opacity: 0;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   -webkit-animation: pulsejg2 6s linear forwards;
   -moz-animation: pulsejg2 6s linear forwards;
@@ -93,9 +93,9 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 3;
+  z-index: 0;
   opacity: 0;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   -webkit-animation: pulsejg2 5s linear forwards;
   -moz-animation: pulsejg2 5s linear forwards;
@@ -120,9 +120,9 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 3;
+  z-index: 0;
   opacity: 0;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   -webkit-animation: pulsejg2 4s linear forwards;
   -moz-animation: pulsejg2 4s linear forwards;
@@ -144,12 +144,12 @@ body {
     opacity: 0;
   }
 
-  40% {
+  10% {
     -webkit-transform: scale(0.8);
     opacity: 0.05;
   }
 
-  50% {
+  20% {
     -webkit-transform: scale(1);
     opacity: 0.1;
   }
