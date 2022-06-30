@@ -3,7 +3,9 @@
     class="relative flex flex-col px-16 py-12 bg-gradient-to-b from-mediumgray to-darkgray h-screen overflow-hidden"
   >
     <Navbar class="z-20" />
-    <Start class="z-20" />
+    <!-- <Start class="z-20" /> -->
+    <Quiz class="z-30"/>
+    <!-- Background -->
     <div class="absolute pulse4" />
     <div class="absolute pulse3" />
     <div class="absolute pulse2" />
@@ -15,6 +17,7 @@
 <script setup>
 import Navbar from './Navbar/Navbar.vue'
 import Start from './Start/Start.vue'
+import Quiz from './Quiz/Quiz.vue';
 </script>
 <style scoped>
 html {
