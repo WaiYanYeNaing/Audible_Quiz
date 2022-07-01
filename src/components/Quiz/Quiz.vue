@@ -20,7 +20,7 @@
         {{ items[index].Question }}
       </div>
       <div class="flex justify-center mt-16">
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <Button
             v-for="Ans in items[index].Answer"
             :key="Ans.id"

@@ -17,7 +17,9 @@
       </svg>
     </div>
     <div class="flex justify-center item-center">
-      <div class="text-2xl font-semibold text-white mt-4">audible</div>
+      <div class="text-2xl font-semibold text-white mt-4 hidden md:flex">
+        audible
+      </div>
       <img
         class="w-12 h-12"
         src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-audible-a-seller-and-producer-of-spoken-audio-entertainment-a-company-by-amazon-logo-color-tal-revivo.png"
@@ -25,10 +27,12 @@
     </div>
     <div class="flex justify-end item-center">
       <img
-        class="w-5 h-5 text-white mr-1"
+        class="w-7 h-6 text-white mr-1"
         src="https://img.icons8.com/material-outlined/96/ffffff/share-rounded.png"
       />
-      <div class="text-sm font-semibold text-white">Share quiz</div>
+      <div class="text-sm font-semibold text-white hidden md:flex">
+        Share quiz
+      </div>
     </div>
   </div>
 </template>
