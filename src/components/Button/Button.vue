@@ -14,13 +14,15 @@
       px-4
       rounded-full 
        ${
-         selected_ans == correct_ans
-           ? id == correct_ans
-             ? 'bg-green-200 text-black'
-             : ''
-           : id == selected_ans
-           ? 'bg-red-300 text-white'
-           : ''
+         selected_ans != ''
+           ? selected_ans == correct_ans
+             ? id == correct_ans
+               ? 'bg-green-200 text-black'
+               : 'text-white'
+             : id == selected_ans
+             ? 'bg-red-300 text-black'
+             : 'text-white'
+           : ' bg-[#2D363E] text-white'
        }`"
   >
     {{ name }}
