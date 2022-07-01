@@ -25,6 +25,26 @@ let page = ref('start')
 
 const start = () => {
   page.value = 'quiz'
+  ResetAnimation()
+}
+
+const ResetAnimation = () => {
+  let p1 = document.getElementsByClassName('pulse1')
+  p1[0].style.animation = 'none'
+  p1[0].offsetHeight // trigger reflow
+  p1[0].style.animation = null
+  let p2 = document.getElementsByClassName('pulse2')
+  p2[0].style.animation = 'none'
+  p2[0].offsetHeight // trigger reflow
+  p2[0].style.animation = null
+  let p3 = document.getElementsByClassName('pulse3')
+  p3[0].style.animation = 'none'
+  p3[0].offsetHeight // trigger reflow
+  p3[0].style.animation = null
+  let p4 = document.getElementsByClassName('pulse4')
+  p4[0].style.animation = 'none'
+  p4[0].offsetHeight // trigger reflow
+  p4[0].style.animation = null
 }
 </script>
 
@@ -57,7 +77,7 @@ body {
 
   -webkit-animation: pulsejg2 7s linear forwards;
   -moz-animation: pulsejg2 7s linear forwards;
-  animation: pulsejg2 17s linear forwards;
+  animation: pulsejg2 67s linear forwards;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   border-radius: 999px;
@@ -84,7 +104,7 @@ body {
 
   -webkit-animation: pulsejg2 6s linear forwards;
   -moz-animation: pulsejg2 6s linear forwards;
-  animation: pulsejg2 6s linear forwards;
+  animation: pulsejg2 66s linear forwards;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   border-radius: 999px;
@@ -111,7 +131,7 @@ body {
 
   -webkit-animation: pulsejg2 5s linear forwards;
   -moz-animation: pulsejg2 5s linear forwards;
-  animation: pulsejg2 5s linear forwards;
+  animation: pulsejg2 65s linear forwards;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   border-radius: 999px;
@@ -138,7 +158,7 @@ body {
 
   -webkit-animation: pulsejg2 4s linear forwards;
   -moz-animation: pulsejg2 4s linear forwards;
-  animation: pulsejg2 4s linear forwards;
+  animation: pulsejg2 64s linear forwards;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   border-radius: 999px;
@@ -188,12 +208,12 @@ body {
     opacity: 0;
   }
 
-  40% {
+  10% {
     -moz-transform: scale(0.8);
     opacity: 0.05;
   }
 
-  50% {
+  20% {
     -moz-transform: scale(1);
     opacity: 0.1;
   }
@@ -220,14 +240,29 @@ body {
     opacity: 0;
   }
 
-  40% {
-    transform: scale(0.8);
-    opacity: 0.05;
+  2% {
+    transform: scale(0.82);
+    opacity: 0.5;
   }
 
-  50% {
+  3% {
+    transform: scale(0.87);
+    opacity: 0.4;
+  }
+
+  4% {
+    transform: scale(0.89);
+    opacity: 0.3;
+  }
+
+  5% {
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+
+  20% {
     transform: scale(1);
-    opacity: 0.1;
+    opacity: 0.2;
   }
 
   60% {
