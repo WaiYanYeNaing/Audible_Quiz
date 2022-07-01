@@ -1,14 +1,6 @@
 <template>
   <div
-    class="
-      h-screen
-      flex flex-col
-      justify-between
-      items-center
-      space-y-9
-      mt-[23vh]
-      pb-10
-    "
+    class="h-screen flex flex-col justify-between items-center space-y-9 mt-[23vh] pb-10"
   >
     <div>
       <div class="text-[#fff] text-lg leading-snug text-center">
@@ -37,47 +29,13 @@
     <!-- Next Question -->
     <div @click="increment" class="relative flex items-center justify-center">
       <div
-        class="
-          absolute
-          bg-gradient-to-r
-          from-darkgray
-          to-gray
-          animate-pulse
-          w-28
-          h-28
-          rounded-full
-        "
+        class="absolute bg-gradient-to-r from-darkgray to-gray animate-pulse w-28 h-28 rounded-full"
       ></div>
       <div
-        class="
-          absolute
-          bg-gradient-to-r
-          from-darkgray
-          to-darkgray
-          w-16
-          h-16
-          flex
-          items-center
-          justify-center
-          rounded-full
-          hover:scale-105
-          ease-in
-          duration-100
-          transition
-          cursor-pointer
-        "
+        class="absolute bg-gradient-to-r from-darkgray to-darkgray w-16 h-16 flex items-center justify-center rounded-full hover:scale-105 ease-in duration-100 transition cursor-pointer"
       >
         <img
-          class="
-            w-9
-            h-9
-            bg-yellow
-            shadow-lg
-            rounded-full
-            pt-[8px]
-            pb-[8px]
-            px-2
-          "
+          class="w-9 h-9 bg-yellow shadow-lg rounded-full pt-[8px] pb-[8px] px-2"
           src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-down-arrows-those-icons-lineal-those-icons-1.png"
         />
       </div>
@@ -85,605 +43,605 @@
   </div>
 </template>
 <script setup>
-import Button from "../Button/Button.vue";
-import { ref } from "vue";
+import Button from '../Button/Button.vue'
+import { ref } from 'vue'
 
 // reactive state
-let index = ref(0);
-let selected_id = ref(null);
+let index = ref(0)
+let selected_id = ref(null)
 
 // functions that mutate state and trigger updates
 const increment = () => {
-  index.value++;
-  selected_id.value = null;
-};
+  index.value++
+  selected_id.value = null
+}
 const Selected_Handler = (id, index) => {
-  if (items.value[index].Selected_Answer == "") {
-    selected_id.value = id;
-    items.value[index].Selected_Answer = id;
+  if (items.value[index].Selected_Answer == '') {
+    selected_id.value = id
+    items.value[index].Selected_Answer = id
   }
-};
+}
 
 let items = ref([
   {
     id: 0,
-    Title: "And go!",
+    Title: 'And go!',
     Question: "Who's Listening?",
     Answer: [
       {
-        id: 0,
-        name: "Euphoria",
-      },
-      {
         id: 1,
-        name: "Angel Baby",
+        name: 'Euphoria',
       },
       {
         id: 2,
-        name: "Beside You",
+        name: 'Angel Baby',
       },
       {
         id: 3,
-        name: "Ipad",
+        name: 'Beside You',
+      },
+      {
+        id: 4,
+        name: 'Ipad',
       },
     ],
-    Correct_Answer: 1,
-    Selected_Answer: "",
+    Correct_Answer: 2,
+    Selected_Answer: 0,
   },
   {
     id: 1,
-    Title: "Just a couple more questions!",
+    Title: 'Just a couple more questions!',
     Question: "Who's Listening?",
     Answer: [
       {
-        id: 0,
-        name: "Funny",
-      },
-      {
         id: 1,
-        name: "Less of you",
+        name: 'Funny',
       },
       {
         id: 2,
-        name: "2 soon",
+        name: 'Less of you',
       },
       {
         id: 3,
-        name: "My You",
+        name: '2 soon',
+      },
+      {
+        id: 4,
+        name: 'My You',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 2,
-    Title: "General Knowledge Quiz",
-    Question: "What was Meta Platforms Inc formerly known as?",
+    Title: 'General Knowledge Quiz',
+    Question: 'What was Meta Platforms Inc formerly known as?',
     Answer: [
       {
-        id: 0,
-        name: "Facebook",
-      },
-      {
         id: 1,
-        name: "Instagram",
+        name: 'Facebook',
       },
       {
         id: 2,
-        name: "Line",
+        name: 'Instagram',
       },
       {
         id: 3,
-        name: "Telegram",
+        name: 'Line',
+      },
+      {
+        id: 4,
+        name: 'Telegram',
       },
     ],
-    Correct_Answer: 0,
-    Selected_Answer: "",
+    Correct_Answer: 1,
+    Selected_Answer: 0,
   },
   {
     id: 3,
-    Title: "General Knowledge Quiz",
-    Question: "What does CIA stand for?",
+    Title: 'General Knowledge Quiz',
+    Question: 'What does CIA stand for?',
     Answer: [
       {
-        id: 0,
-        name: "Center Intelligence Agency",
-      },
-      {
         id: 1,
-        name: "Civil Intelligence Agancy",
+        name: 'Center Intelligence Agency',
       },
       {
         id: 2,
-        name: "Central Intelligence Agency",
+        name: 'Civil Intelligence Agancy',
       },
       {
         id: 3,
-        name: "Cute Information Agency",
+        name: 'Central Intelligence Agency',
+      },
+      {
+        id: 4,
+        name: 'Cute Information Agency',
       },
     ],
-    Correct_Answer: 2,
-    Selected_Answer: "",
+    Correct_Answer: 3,
+    Selected_Answer: 0,
   },
   {
     id: 4,
-    Title: "General Knowledge Quiz",
-    Question: "What is a young giraffe called?",
+    Title: 'General Knowledge Quiz',
+    Question: 'What is a young giraffe called?',
     Answer: [
       {
-        id: 0,
-        name: "Baby giraffe",
-      },
-      {
         id: 1,
-        name: "A calf",
+        name: 'Baby giraffe',
       },
       {
         id: 2,
-        name: "Small giraffe",
+        name: 'A calf',
       },
       {
         id: 3,
-        name: "Baby Long neck",
+        name: 'Small giraffe',
+      },
+      {
+        id: 4,
+        name: 'Baby Long neck',
       },
     ],
-    Correct_Answer: 1,
-    Selected_Answer: "",
+    Correct_Answer: 2,
+    Selected_Answer: 0,
   },
   {
     id: 5,
-    Title: "General Knowledge Quiz",
-    Question: "Pyrophobia is the fear of what?",
+    Title: 'General Knowledge Quiz',
+    Question: 'Pyrophobia is the fear of what?',
     Answer: [
       {
-        id: 0,
-        name: "Height",
-      },
-      {
         id: 1,
-        name: "Anime",
+        name: 'Height',
       },
       {
         id: 2,
-        name: "Water",
+        name: 'Anime',
       },
       {
         id: 3,
-        name: "Fire",
+        name: 'Water',
+      },
+      {
+        id: 4,
+        name: 'Fire',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 6,
-    Title: "General Knowledge Quiz",
-    Question: "According to George Orwell, who is watching us?",
+    Title: 'General Knowledge Quiz',
+    Question: 'According to George Orwell, who is watching us?',
     Answer: [
       {
-        id: 0,
-        name: "Big Brother",
-      },
-      {
         id: 1,
-        name: "Big Sister",
+        name: 'Big Brother',
       },
       {
         id: 2,
-        name: "Small Brother",
+        name: 'Big Sister',
       },
       {
         id: 3,
-        name: "Big Daddy",
+        name: 'Small Brother',
+      },
+      {
+        id: 4,
+        name: 'Big Daddy',
       },
     ],
-    Correct_Answer: 0,
-    Selected_Answer: "",
+    Correct_Answer: 1,
+    Selected_Answer: 0,
   },
   {
     id: 7,
-    Title: "General Knowledge Quiz",
+    Title: 'General Knowledge Quiz',
     Question:
-      "Randall Flag, Jack Torrance and John Coffey are all characters created by which author?",
+      'Randall Flag, Jack Torrance and John Coffey are all characters created by which author?',
     Answer: [
       {
-        id: 0,
-        name: "Stephen Hawking",
-      },
-      {
         id: 1,
-        name: "Stephen King",
+        name: 'Stephen Hawking',
       },
       {
         id: 2,
-        name: "Stephen Chow",
+        name: 'Stephen King',
       },
       {
         id: 3,
-        name: "Stephen Curry",
+        name: 'Stephen Chow',
+      },
+      {
+        id: 4,
+        name: 'Stephen Curry',
       },
     ],
-    Correct_Answer: 1,
-    Selected_Answer: "",
+    Correct_Answer: 2,
+    Selected_Answer: 0,
   },
   {
     id: 8,
-    Title: "General Knowledge Quiz",
-    Question: "What band was Harry Styles in before his solo career?",
+    Title: 'General Knowledge Quiz',
+    Question: 'What band was Harry Styles in before his solo career?',
     Answer: [
       {
-        id: 0,
-        name: "One Direction",
-      },
-      {
         id: 1,
-        name: "Two Direction",
+        name: 'One Direction',
       },
       {
         id: 2,
-        name: "Linkin Park",
+        name: 'Two Direction',
       },
       {
         id: 3,
+        name: 'Linkin Park',
+      },
+      {
+        id: 4,
         name: "Why don't we",
       },
     ],
-    Correct_Answer: 0,
-    Selected_Answer: "",
+    Correct_Answer: 1,
+    Selected_Answer: 0,
   },
   {
     id: 9,
-    Title: "General Knowledge Quiz",
-    Question: "Who is the president of the United States?",
+    Title: 'General Knowledge Quiz',
+    Question: 'Who is the president of the United States?',
     Answer: [
       {
-        id: 0,
-        name: "Donald Trump",
-      },
-      {
         id: 1,
-        name: "Donald Duck",
+        name: 'Donald Trump',
       },
       {
         id: 2,
-        name: "Joe Biden",
+        name: 'Donald Duck',
       },
       {
         id: 3,
-        name: "Joe Alwyn",
+        name: 'Joe Biden',
+      },
+      {
+        id: 4,
+        name: 'Joe Alwyn',
       },
     ],
-    Correct_Answer: 2,
-    Selected_Answer: "",
+    Correct_Answer: 3,
+    Selected_Answer: 0,
   },
   {
     id: 10,
-    Title: "General Knowledge Quiz",
+    Title: 'General Knowledge Quiz',
     Question:
-      "Which British actor will play Batman in the upcoming reboot directed by Matt Reeves?",
+      'Which British actor will play Batman in the upcoming reboot directed by Matt Reeves?',
     Answer: [
       {
-        id: 0,
-        name: "Donald Trump",
-      },
-      {
         id: 1,
-        name: "Ben Affleck",
+        name: 'Donald Trump',
       },
       {
         id: 2,
-        name: "Christian Bale",
+        name: 'Ben Affleck',
       },
       {
         id: 3,
-        name: "Robert Pattinson",
+        name: 'Christian Bale',
+      },
+      {
+        id: 4,
+        name: 'Robert Pattinson',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 11,
-    Title: "General Knowledge Quiz",
+    Title: 'General Knowledge Quiz',
     Question:
-      "How many countries are there in the region of Europe? (Recognised by the United Nations)",
+      'How many countries are there in the region of Europe? (Recognised by the United Nations)',
     Answer: [
       {
-        id: 0,
-        name: "90",
-      },
-      {
         id: 1,
-        name: "40",
+        name: '90',
       },
       {
         id: 2,
-        name: "30",
+        name: '40',
       },
       {
         id: 3,
-        name: "45",
+        name: '30',
+      },
+      {
+        id: 4,
+        name: '45',
       },
     ],
-    Correct_Answer: 1,
-    Selected_Answer: "",
+    Correct_Answer: 2,
+    Selected_Answer: 0,
   },
   {
     id: 12,
-    Title: "General Knowledge Quiz",
+    Title: 'General Knowledge Quiz',
     Question:
-      "How many permanent members are there on the UN security council?",
+      'How many permanent members are there on the UN security council?',
     Answer: [
       {
-        id: 0,
-        name: "Six",
-      },
-      {
         id: 1,
-        name: "Four",
+        name: 'Six',
       },
       {
         id: 2,
-        name: "Five",
+        name: 'Four',
       },
       {
         id: 3,
-        name: "Eight",
+        name: 'Five',
+      },
+      {
+        id: 4,
+        name: 'Eight',
       },
     ],
-    Correct_Answer: 2,
-    Selected_Answer: "",
+    Correct_Answer: 3,
+    Selected_Answer: 0,
   },
   {
     id: 13,
-    Title: "General Knowledge Quiz",
-    Question: "How many centimetres in a metre?",
+    Title: 'General Knowledge Quiz',
+    Question: 'How many centimetres in a metre?',
     Answer: [
       {
-        id: 0,
-        name: "10",
-      },
-      {
         id: 1,
-        name: "1000",
+        name: '10',
       },
       {
         id: 2,
-        name: "-100",
+        name: '1000',
       },
       {
         id: 3,
-        name: "100",
+        name: '-100',
+      },
+      {
+        id: 4,
+        name: '100',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 14,
-    Title: "General Knowledge Quiz",
+    Title: 'General Knowledge Quiz',
     Question: "Who are Harry Potter's two best friends?",
     Answer: [
       {
-        id: 0,
-        name: "Doctor Strange and Wanda",
-      },
-      {
         id: 1,
-        name: "Tom and Jerry",
+        name: 'Doctor Strange and Wanda',
       },
       {
         id: 2,
-        name: "Sasuke and Sakura",
+        name: 'Tom and Jerry',
       },
       {
         id: 3,
-        name: "Ron and Hermione",
+        name: 'Sasuke and Sakura',
+      },
+      {
+        id: 4,
+        name: 'Ron and Hermione',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 15,
-    Title: "General Knowledge Quiz",
-    Question: "What’s the name of the cowboy in Toy Story?",
+    Title: 'General Knowledge Quiz',
+    Question: 'What’s the name of the cowboy in Toy Story?',
     Answer: [
       {
-        id: 0,
-        name: "Woody",
-      },
-      {
         id: 1,
-        name: "Booty",
+        name: 'Woody',
       },
       {
         id: 2,
-        name: "Buzz",
+        name: 'Booty',
       },
       {
         id: 3,
-        name: "Shark",
+        name: 'Buzz',
+      },
+      {
+        id: 4,
+        name: 'Shark',
       },
     ],
-    Correct_Answer: 0,
-    Selected_Answer: "",
+    Correct_Answer: 1,
+    Selected_Answer: 0,
   },
   {
     id: 16,
-    Title: "General Knowledge Quiz",
-    Question: "How many planets are in our solar system?",
+    Title: 'General Knowledge Quiz',
+    Question: 'How many planets are in our solar system?',
     Answer: [
       {
-        id: 0,
-        name: "6",
-      },
-      {
         id: 1,
-        name: "7",
+        name: '6',
       },
       {
         id: 2,
-        name: "8",
+        name: '7',
       },
       {
         id: 3,
-        name: "9",
+        name: '8',
+      },
+      {
+        id: 4,
+        name: '9',
       },
     ],
-    Correct_Answer: 2,
-    Selected_Answer: "",
+    Correct_Answer: 3,
+    Selected_Answer: 0,
   },
   {
     id: 17,
-    Title: "General Knowledge Quiz",
-    Question: "How many elements are in the periodic table?",
+    Title: 'General Knowledge Quiz',
+    Question: 'How many elements are in the periodic table?',
     Answer: [
       {
-        id: 0,
-        name: "118",
-      },
-      {
         id: 1,
-        name: "181",
+        name: '118',
       },
       {
         id: 2,
-        name: "119",
+        name: '181',
       },
       {
         id: 3,
-        name: "199",
+        name: '119',
+      },
+      {
+        id: 4,
+        name: '199',
       },
     ],
-    Correct_Answer: 0,
-    Selected_Answer: "",
+    Correct_Answer: 1,
+    Selected_Answer: 0,
   },
   {
     id: 18,
-    Title: "General Knowledge Quiz",
-    Question: "How many hearts does an octopus have?",
+    Title: 'General Knowledge Quiz',
+    Question: 'How many hearts does an octopus have?',
     Answer: [
       {
-        id: 0,
-        name: "0",
-      },
-      {
         id: 1,
-        name: "1",
+        name: '0',
       },
       {
         id: 2,
-        name: "2",
+        name: '1',
       },
       {
         id: 3,
-        name: "3",
+        name: '2',
+      },
+      {
+        id: 4,
+        name: '3',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 19,
-    Title: "General Knowledge Quiz",
+    Title: 'General Knowledge Quiz',
     Question:
-      "Name the actress who plays the role of Mike Wheeler in Stranger Things.",
+      'Name the actress who plays the role of Mike Wheeler in Stranger Things.',
     Answer: [
       {
-        id: 0,
-        name: "Fat Wolfhard",
-      },
-      {
         id: 1,
-        name: "Finn Doghard",
+        name: 'Fat Wolfhard',
       },
       {
         id: 2,
-        name: "Finn Wolfeasy",
+        name: 'Finn Doghard',
       },
       {
         id: 3,
-        name: "Finn Wolfhard",
+        name: 'Finn Wolfeasy',
+      },
+      {
+        id: 4,
+        name: 'Finn Wolfhard',
       },
     ],
-    Correct_Answer: 3,
-    Selected_Answer: "",
+    Correct_Answer: 4,
+    Selected_Answer: 0,
   },
   {
     id: 20,
-    Title: "General Knowledge Quiz",
-    Question: "Who killed Tony Stark’s parents?",
+    Title: 'General Knowledge Quiz',
+    Question: 'Who killed Tony Stark’s parents?',
     Answer: [
       {
-        id: 0,
-        name: "The Summer Soldier",
-      },
-      {
         id: 1,
-        name: "The Rainy Soldier",
+        name: 'The Summer Soldier',
       },
       {
         id: 2,
-        name: "The Winter Soldier",
+        name: 'The Rainy Soldier',
       },
       {
         id: 3,
-        name: "Captain America",
+        name: 'The Winter Soldier',
+      },
+      {
+        id: 4,
+        name: 'Captain America',
       },
     ],
-    Correct_Answer: 2,
-    Selected_Answer: "",
+    Correct_Answer: 3,
+    Selected_Answer: 0,
   },
   {
     id: 21,
-    Title: "General Knowledge Quiz",
-    Question: "What is the collective name for a group of crows?",
+    Title: 'General Knowledge Quiz',
+    Question: 'What is the collective name for a group of crows?',
     Answer: [
       {
-        id: 0,
-        name: "A killer",
-      },
-      {
         id: 1,
-        name: "A Horde",
+        name: 'A killer',
       },
       {
         id: 2,
-        name: "A murder",
+        name: 'A Horde',
       },
       {
         id: 3,
-        name: "A corw group",
+        name: 'A murder',
+      },
+      {
+        id: 4,
+        name: 'A corw group',
       },
     ],
-    Correct_Answer: 2,
-    Selected_Answer: "",
+    Correct_Answer: 3,
+    Selected_Answer: 0,
   },
   {
     id: 22,
-    Title: "General Knowledge Quiz",
-    Question: "How many sides does an octagon have?",
+    Title: 'General Knowledge Quiz',
+    Question: 'How many sides does an octagon have?',
     Answer: [
       {
-        id: 0,
-        name: "8",
-      },
-      {
         id: 1,
-        name: "9",
+        name: '8',
       },
       {
         id: 2,
-        name: "10",
+        name: '9',
       },
       {
         id: 3,
-        name: "11",
+        name: '10',
+      },
+      {
+        id: 4,
+        name: '11',
       },
     ],
-    Correct_Answer: 8,
-    Selected_Answer: "",
+    Correct_Answer: 1,
+    Selected_Answer: 0,
   },
-]);
+])
 </script>
