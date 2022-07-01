@@ -3,8 +3,8 @@
     class="relative flex flex-col px-16 py-12 bg-gradient-to-b from-mediumgray to-darkgray h-screen overflow-hidden"
   >
     <Navbar class="z-20" />
-    <!-- <Start class="z-20" /> -->
-    <Quiz class="z-30"/>
+    <Start class="z-20" v-show="page == 'start'" @start="start" />
+    <Quiz class="z-30" v-show="page == 'quiz'" />
     <!-- Background -->
     <div class="absolute pulse4" />
     <div class="absolute pulse3" />
@@ -17,8 +17,17 @@
 <script setup>
 import Navbar from './Navbar/Navbar.vue'
 import Start from './Start/Start.vue'
-import Quiz from './Quiz/Quiz.vue';
+import Quiz from './Quiz/Quiz.vue'
+import { ref } from 'vue'
+
+// reactive state
+let page = ref('start')
+
+const start = () => {
+  page.value = 'quiz'
+}
 </script>
+
 <style scoped>
 html {
   height: 100%;

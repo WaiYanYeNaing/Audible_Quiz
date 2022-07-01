@@ -15,6 +15,7 @@
         class="absolute bg-gradient-to-r from-darkgray to-gray animate-pulse w-28 h-28 rounded-full"
       ></div>
       <div
+        @click="$emit('start')"
         class="absolute bg-gradient-to-r from-darkgray to-darkgray w-16 h-16 flex items-center justify-center rounded-full hover:scale-105 ease-in duration-100 transition cursor-pointer"
       >
         <img
