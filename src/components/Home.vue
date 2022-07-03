@@ -4,7 +4,8 @@
   >
     <Navbar class="z-20" />
     <Start class="z-20" v-show="page == 'start'" @start="start" />
-    <Quiz class="z-30" v-show="page == 'quiz'" />
+    <Quiz class="z-30" v-show="page == 'quiz'" @quiz="quiz" />
+    <Result class="z-30" v-show="page == 'result'" />
     <!-- Background -->
     <div class="absolute pulse4" />
     <div class="absolute pulse3" />
@@ -18,6 +19,7 @@
 import Navbar from './Navbar/Navbar.vue'
 import Start from './Start/Start.vue'
 import Quiz from './Quiz/Quiz.vue'
+import Result from './Result/Result.vue'
 import { ref } from 'vue'
 
 // reactive state
@@ -25,6 +27,12 @@ let page = ref('start')
 
 const start = () => {
   page.value = 'quiz'
+  ResetAnimation()
+}
+
+const quiz = () => {
+  console.log('quiz')
+  page.value = 'result'
   ResetAnimation()
 }
 
