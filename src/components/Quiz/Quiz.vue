@@ -6,10 +6,12 @@
       justify-between
       items-center
       space-y-9
-      mt-[23vh]
+      mt-[15vh]
       pb-10
     "
   >
+    <MyTextInputVue @customChange="handleCustomChange" />
+    <p>Uppercase: {{ uppercase }}</p>
     <div>
       <div class="text-[#fff] text-lg leading-snug text-center">
         {{ items[index].Title }}
@@ -86,12 +88,17 @@
 </template>
 <script setup>
 import Button from "../Button/Button.vue";
+import MyTextInputVue from "../Emit/MyTextInput.vue";
 import { ref } from "vue";
 
 // reactive state
 let index = ref(0);
 let selected_id = ref(null);
 
+let uppercase = ref(null);
+const handleCustomChange = (s) => {
+  uppercase.value = s;
+};
 // functions that mutate state and trigger updates
 const increment = () => {
   if (selected_id.value != null) {
