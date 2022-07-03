@@ -6,7 +6,6 @@
     <Start class="z-20" v-show="page == 'start'" @start="start" />
     <Quiz class="z-30" v-show="page == 'quiz'" @quiz="quiz" />
     <Result class="z-30" v-show="page == 'result'" />
-    <Result class="z-30" />
     <!-- Background -->
     <div class="absolute pulse4" />
     <div class="absolute pulse3" />

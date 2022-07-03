@@ -25,16 +25,20 @@
         src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-audible-a-seller-and-producer-of-spoken-audio-entertainment-a-company-by-amazon-logo-color-tal-revivo.png"
       />
     </div>
-    <div class="flex justify-end item-center">
+    <div class="flex justify-end item-center cursor-pointer" @click="Reload()">
       <img
-        class="w-7 h-6 text-white mr-1"
-        src="https://img.icons8.com/material-outlined/96/ffffff/share-rounded.png"
+        class="w-7 h-7 text-white mr-3 hover:scale-110 ease-in duration-100 transition"
+        src="https://img.icons8.com/ultraviolet/240/000000/restart--v1.png"
       />
       <div class="text-sm font-semibold text-white hidden md:flex">
-        Share quiz
+        Restart quiz
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const Reload = () => {
+  window.location.reload()
+}
+</script>

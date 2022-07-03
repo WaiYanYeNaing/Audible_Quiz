@@ -2,8 +2,6 @@
   <div
     class="h-screen flex flex-col justify-between items-center space-y-9 mt-[23vh] pb-10"
   >
-    <MyTextInputVue @customChange="handleCustomChange" />
-    <p>Uppercase: {{ uppercase }}</p>
     <div>
       <div class="text-[#fff] text-lg leading-snug text-center">
         {{ items[index].Title }}
@@ -51,10 +49,11 @@
 </template>
 <script setup>
 import Button from '../Button/Button.vue'
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 import { useResultStore } from '../../stores/ResultStore'
 
 const resultStore = useResultStore()
+const emit = defineEmits(['quiz'])
 
 // reactive state
 let index = ref(0)
@@ -644,19 +643,15 @@ let items = ref([
   },
 ])
 
-// functions that mutate state and trigger updates
-const handleCustomChange = (s) => {
-  uppercase.value = s
-}
-
 const increment = (status) => {
-  if (selected_id.value != null) {
-    index.value++
-    selected_id.value = null
-    if (status) resultStore.result++
-  }
-  if (index.value == 10) {
-    this.$emit('quiz')
+  if (status) resultStore.result++
+  if (index.value >= 9) {
+    emit('quiz')
+  } else {
+    if (selected_id.value != null) {
+      index.value++
+      selected_id.value = null
+    }
   }
 }
 const Selected_Handler = (id, index) => {

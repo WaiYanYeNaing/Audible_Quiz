@@ -12,6 +12,6 @@ export const useResultStore = defineStore('storeId', {
 
   // getters
   getters: {
-    Result: (state) => 'The result is ' + state.result,
+    Result: (state) => state.result,
   },
 })
