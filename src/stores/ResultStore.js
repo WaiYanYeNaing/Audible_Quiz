@@ -4,7 +4,7 @@ export const useResultStore = defineStore('storeId', {
   // state
   state: () => {
     return {
-      // result: 8,
+      result: 0,
     }
   },
 
@@ -12,8 +12,6 @@ export const useResultStore = defineStore('storeId', {
 
   // getters
   getters: {
-    Result: (state) => {
-      return (num) => 'The result is ' + num
-    },
+    Result: (state) => 'The result is ' + state.result,
   },
 })

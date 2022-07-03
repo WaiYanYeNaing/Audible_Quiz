@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ resultStore.Result(19) }}
+    {{ resultStore.Result }}
   </div>
 </template>
 

@@ -27,7 +27,12 @@
     </div>
 
     <!-- Next Question -->
-    <div @click="increment" class="relative flex items-center justify-center">
+    <div
+      @click="
+        increment(items[index].Selected_Answer == items[index].Correct_Answer)
+      "
+      class="relative flex items-center justify-center"
+    >
       <div
         class="absolute bg-gradient-to-r from-darkgray to-gray animate-pulse w-28 h-28 rounded-full"
       ></div>
@@ -45,6 +50,9 @@
 <script setup>
 import Button from '../Button/Button.vue'
 import { ref } from 'vue'
+import { useResultStore } from '../../stores/ResultStore'
+
+const resultStore = useResultStore()
 
 // reactive state
 let index = ref(0)
@@ -633,11 +641,11 @@ let items = ref([
 ])
 
 // functions that mutate state and trigger updates
-const increment = () => {
+const increment = (status) => {
   if (selected_id.value != null) {
     index.value++
     selected_id.value = null
-    this.$emit('quiz')
+    if (status) resultStore.result++
   }
   if (index.value == 10) {
     this.$emit('quiz')
