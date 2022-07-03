@@ -6,7 +6,7 @@
       justify-between
       items-center
       space-y-9
-      mt-[15vh]
+      mt-[23vh]
       pb-10
     "
   >
@@ -88,31 +88,11 @@
 </template>
 <script setup>
 import Button from "../Button/Button.vue";
-import MyTextInputVue from "../Emit/MyTextInput.vue";
 import { ref } from "vue";
 
 // reactive state
 let index = ref(0);
 let selected_id = ref(null);
-
-let uppercase = ref(null);
-const handleCustomChange = (s) => {
-  uppercase.value = s;
-};
-// functions that mutate state and trigger updates
-const increment = () => {
-  if (selected_id.value != null) {
-    index.value++;
-    selected_id.value = null;
-  }
-};
-const Selected_Handler = (id, index) => {
-  if (items.value[index].Selected_Answer == "") {
-    selected_id.value = id;
-    items.value[index].Selected_Answer = id;
-  }
-};
-
 let items = ref([
   {
     id: 0,
@@ -695,4 +675,41 @@ let items = ref([
     Selected_Answer: 0,
   },
 ]);
+
+// functions that mutate state and trigger updates
+const increment = () => {
+  if (selected_id.value != null) {
+    index.value++;
+    selected_id.value = null;
+    this.$emit("quiz");
+  }
+  if (index.value == 10) {
+    this.$emit("quiz");
+  }
+};
+const Selected_Handler = (id, index) => {
+  if (items.value[index].Selected_Answer == "") {
+    selected_id.value = id;
+    items.value[index].Selected_Answer = id;
+  }
+};
+
+// function that return 10 random item from items array without duplicate
+const getRandom_10_questions_without_duplicate = () => {
+  // Shuffle items array
+  let shuffle_items = items.value.sort(() => Math.random() - 0.5);
+
+  // Get first 10 items
+  let random_10_items = shuffle_items.slice(0, 10);
+
+  // set id from 1 to 10
+  let id = 1;
+  random_10_items.forEach((item) => {
+    item.id = id;
+    id++;
+  });
+
+  return random_10_items;
+};
+items.value = getRandom_10_questions_without_duplicate();
 </script>
