@@ -2,6 +2,8 @@
   <div
     class="h-screen flex flex-col justify-between items-center space-y-9 mt-[23vh] pb-10"
   >
+    <MyTextInputVue @customChange="handleCustomChange" />
+    <p>Uppercase: {{ uppercase }}</p>
     <div>
       <div class="text-[#fff] text-lg leading-snug text-center">
         {{ items[index].Title }}
@@ -57,6 +59,8 @@ const resultStore = useResultStore()
 // reactive state
 let index = ref(0)
 let selected_id = ref(null)
+let uppercase = ref(null)
+
 let items = ref([
   {
     id: 0,
@@ -641,6 +645,10 @@ let items = ref([
 ])
 
 // functions that mutate state and trigger updates
+const handleCustomChange = (s) => {
+  uppercase.value = s
+}
+
 const increment = (status) => {
   if (selected_id.value != null) {
     index.value++
