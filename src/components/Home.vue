@@ -3,9 +3,9 @@
     class="relative flex flex-col px-16 py-12 bg-gradient-to-b from-mediumgray to-darkgray h-screen overflow-hidden"
   >
     <Navbar class="z-20" />
-    <!-- <Start class="z-20" v-show="page == 'start'" @start="start" />
+    <Start class="z-20" v-show="page == 'start'" @start="start" />
     <Quiz class="z-30" v-show="page == 'quiz'" @quiz="quiz" />
-    <Result class="z-30" v-show="page == 'result'" /> -->
+    <Result class="z-30" v-show="page == 'result'" />
     <Result class="z-30" />
     <!-- Background -->
     <div class="absolute pulse4" />
