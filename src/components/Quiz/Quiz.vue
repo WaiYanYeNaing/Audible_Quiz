@@ -93,6 +93,8 @@ import { ref } from "vue";
 // reactive state
 let index = ref(0);
 let selected_id = ref(null);
+let uppercase = ref(null);
+
 let items = ref([
   {
     id: 0,
@@ -677,6 +679,10 @@ let items = ref([
 ]);
 
 // functions that mutate state and trigger updates
+const handleCustomChange = (s) => {
+  uppercase.value = s;
+};
+
 const increment = () => {
   if (selected_id.value != null) {
     index.value++;
