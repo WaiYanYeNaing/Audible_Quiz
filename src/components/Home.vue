@@ -1,6 +1,17 @@
 <template>
   <div
-    class="relative flex flex-col px-16 py-12 bg-gradient-to-b from-mediumgray to-darkgray h-screen overflow-hidden"
+    class="
+      relative
+      flex flex-col
+      px-16
+      py-12
+      bg-gradient-to-b
+      from-mediumgray
+      to-darkgray
+      h-screen
+      overflow-y-auto
+      no-scrollbar
+    "
   >
     <Navbar class="z-20" />
     <Start class="z-20" v-show="page == 'start'" @start="start" />
@@ -16,44 +27,44 @@
 </template>
 
 <script setup>
-import Navbar from './Navbar/Navbar.vue'
-import Start from './Start/Start.vue'
-import Quiz from './Quiz/Quiz.vue'
-import Result from './Result/Result.vue'
-import { ref } from 'vue'
+import Navbar from "./Navbar/Navbar.vue";
+import Start from "./Start/Start.vue";
+import Quiz from "./Quiz/Quiz.vue";
+import Result from "./Result/Result.vue";
+import { ref } from "vue";
 
 // reactive state
-let page = ref('start')
+let page = ref("start");
 
 const start = () => {
-  page.value = 'quiz'
-  ResetAnimation()
-}
+  page.value = "quiz";
+  ResetAnimation();
+};
 
 const quiz = () => {
-  console.log('quiz')
-  page.value = 'result'
-  ResetAnimation()
-}
+  console.log("quiz");
+  page.value = "result";
+  ResetAnimation();
+};
 
 const ResetAnimation = () => {
-  let p1 = document.getElementsByClassName('pulse1')
-  p1[0].style.animation = 'none'
-  p1[0].offsetHeight // trigger reflow
-  p1[0].style.animation = null
-  let p2 = document.getElementsByClassName('pulse2')
-  p2[0].style.animation = 'none'
-  p2[0].offsetHeight // trigger reflow
-  p2[0].style.animation = null
-  let p3 = document.getElementsByClassName('pulse3')
-  p3[0].style.animation = 'none'
-  p3[0].offsetHeight // trigger reflow
-  p3[0].style.animation = null
-  let p4 = document.getElementsByClassName('pulse4')
-  p4[0].style.animation = 'none'
-  p4[0].offsetHeight // trigger reflow
-  p4[0].style.animation = null
-}
+  let p1 = document.getElementsByClassName("pulse1");
+  p1[0].style.animation = "none";
+  p1[0].offsetHeight; // trigger reflow
+  p1[0].style.animation = null;
+  let p2 = document.getElementsByClassName("pulse2");
+  p2[0].style.animation = "none";
+  p2[0].offsetHeight; // trigger reflow
+  p2[0].style.animation = null;
+  let p3 = document.getElementsByClassName("pulse3");
+  p3[0].style.animation = "none";
+  p3[0].offsetHeight; // trigger reflow
+  p3[0].style.animation = null;
+  let p4 = document.getElementsByClassName("pulse4");
+  p4[0].style.animation = "none";
+  p4[0].offsetHeight; // trigger reflow
+  p4[0].style.animation = null;
+};
 </script>
 
 <style scoped>
